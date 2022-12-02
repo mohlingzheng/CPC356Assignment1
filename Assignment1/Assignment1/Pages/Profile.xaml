@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Assignment1.Pages.Profile"
+             IconImageSource="profile.png"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             BackgroundImageSource=""
+    ios:Page.UseSafeArea="true">
+
+    <!--#404258 #474E68 #50577A #6B728E-->
+    <!--#8EC3B0 #9ED5C5 #BCEAD5 #DEF5E5-->
+    
+    <Page.Resources>
+        <Style TargetType="Label" x:Key="Front">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Margin" Value="-1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="LineBreakMode" Value="WordWrap"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="Back">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Margin" Value="-1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="LineBreakMode" Value="WordWrap"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="List">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Margin" Value="-1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="LineBreakMode" Value="WordWrap"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#474E68"/>
+            <Setter Property="HasShadow" Value="True"/>
+            <Setter Property="BorderColor" Value="#404258"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="WidthRequest" Value="1000"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid BackgroundColor="#6B728E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Image Source="profile_picture.png"/>
+        </Frame>
+
+        <Frame BindingContext="Frame"
+               Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Front}" 
+                       Text="Full Name"/>
+            </StackLayout>
+        </Frame>
+        <Frame BindingContext="Frame"
+               Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Back}" 
+                       Text="Moh Ling Zheng"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame BindingContext="Frame"
+               Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Front}" 
+                       Text="Academic Year"/>
+            </StackLayout>
+        </Frame>
+        <Frame BindingContext="Frame"
+               Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Back}" 
+                       Text="Year 3 Semester 1"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame BindingContext="Frame"
+               Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Front}" 
+                       Text="Days Created"/>
+            </StackLayout>
+        </Frame>
+        <Frame BindingContext="Frame"
+               Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1">
+            <StackLayout>
+                <Label BindingContext="Label" Style="{StaticResource Back}" 
+                       Text="2 days"
+                       x:Name="daysCreated"/>
+            </StackLayout>
+        </Frame>
+
+        <Grid Grid.Row="6" Grid.RowSpan="6" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Frame BindingContext="Frame"
+               Grid.Row="1" Grid.Column="1">
+                <StackLayout>
+                    <Label BindingContext="Label" Style="{StaticResource List}" 
+                       Text="List of Mobile Apps"/>
+                </StackLayout>
+            </Frame>
+            <Frame BindingContext="Frame"
+               Grid.Row="2" Grid.Column="1">
+                <StackLayout>
+                    <Label BindingContext="Label" Style="{StaticResource List}" 
+                       Text="WhatApps&#10;Instagram&#10;Webex Meet"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BindingContext="Frame"
+               Grid.Row="1" Grid.Column="2">
+                <StackLayout>
+                    <Label BindingContext="Label" Style="{StaticResource List}" 
+                       Text="List of Favourite Games"/>
+                </StackLayout>
+            </Frame>
+            <Frame BindingContext="Frame"
+               Grid.Row="2" Grid.Column="2">
+                <StackLayout>
+                    <Label BindingContext="Label" Style="{StaticResource List}" 
+                       Text="Mobile Legends&#10;Among Us&#10;Candy Crush"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+       
+
+    </Grid>
+</ContentPage>

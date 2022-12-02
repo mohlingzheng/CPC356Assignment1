@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Assignment1.Pages"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="Assignment1.Pages.Record"
+             x:Name="RecordPage"
+             IconImageSource="record.png">
+
+    <Grid Padding="5" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Default">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Entry x:Name="newName"
+               Placeholder="Enter name"
+               Grid.Row="0"/>
+
+        <Entry x:Name="newType"
+               Placeholder="Enter type"
+               Grid.Row="1"/>
+
+        <Entry x:Name="newYear"
+               Placeholder="Enter year"
+               Grid.Row="2"/>
+
+        <Entry x:Name="newVersion"
+               Placeholder="Enter version"
+               Grid.Row="3"/>
+
+        <Button Text="Add Game"
+                Grid.Row="4"
+                Clicked="Button_Clicked"/>
+
+        <Label x:Name="statusMessage"
+               Grid.Row="5"/>
+
+        <Button Text="Delete"
+                Grid.Row="6"
+                Clicked="OnDeleteButtonClicked"/>
+
+        <Button Text="Get All People"
+                Grid.Row="7"
+                Clicked="OnGetButtonClicked"/>
+
+        <ListView x:Name="gameList"
+                  Grid.Row="8">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="30">
+                        <StackLayout Padding="5">
+                            <Label Text="{Binding Id}"/>
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Type}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

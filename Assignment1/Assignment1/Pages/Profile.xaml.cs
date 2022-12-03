@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +18,19 @@ namespace Assignment1.Pages
             DateTime dt = DateTime.Now;
             DateTime dateCreated = new DateTime(2022, 11, 1);
             var daysC = dt - dateCreated;
-            daysCreated.Text = (Convert.ToInt32(daysC.TotalDays)).ToString() + " days";
+            daysCreated.Text = "Created " + (Convert.ToInt32(daysC.TotalDays)).ToString() + " days";
+        }
+
+        private async void LinkToInstagram(object sender, EventArgs args)
+        {
+            string uri = "https://www.instagram.com/moh_l_z/?hl=en";
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+
+        private async void LinkToFacebook(object sender, EventArgs args)
+        {
+            string uri = "https://www.facebook.com/moh.lingzheng.9?mibextid=ZbWKwL";
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
     }
 }

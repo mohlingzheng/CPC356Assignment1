@@ -24,20 +24,12 @@
     </Page.Resources>
 
 
-    <Frame CornerRadius="10">
-        <Frame.Background>
-            <RadialGradientBrush Center="0.5,0.4"
-                             Radius="0.7">
-                <GradientStop Color="#0b2d39"
-                          Offset="0.1"/>
-                <GradientStop Color="#0f3c4c"
-                          Offset="0.5"/>
-                <GradientStop Color="#134b5f"
-                          Offset="1.0"/>
-            </RadialGradientBrush>
-        </Frame.Background>
+    <Grid>
+        <Image Opacity="0.8"
+               Aspect="AspectFill"
+            Source="https://wallpaper.dog/large/708696.png"/>
 
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="0,0,0,0">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="15">
             <Label Text="Weather Forecast" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label Text="date" x:Name="lbldate" FontSize="15" HorizontalOptions="Center"/>
 
@@ -46,13 +38,14 @@
                 <Label Text="PIN Code" TextColor="White" Margin="10" x:Name="lblPinCode" HorizontalOptions="Center"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Entry WidthRequest="100" x:Name="entPinCode" Text="11700" HorizontalTextAlignment="Center"/>
-                    <Button Text="Get Weather Info" x:Name="btnGetWeather" Clicked="btnGetWeather_Click" />
+                    <Button Text="Get Weather Info" x:Name="btnGetWeather" BackgroundColor="#996B728E" CornerRadius="20"
+                            Clicked="btnGetWeather_Click" WidthRequest="190"/>
                 </StackLayout>
             </StackLayout>
 
             <Frame CornerRadius="10" HeightRequest="150"
-               VerticalOptions="Start" Margin="10, 10, 10, 10" BackgroundColor="#6B728E" Padding="10,10,10,10">
-                <StackLayout VerticalOptions="StartAndExpand">
+               VerticalOptions="Start" Margin="10, 10, 10, 10" BackgroundColor="#996B728E" Padding="10,10,10,10">
+                <StackLayout VerticalOptions="Center" Margin="15,0">
                     <StackLayout Orientation="Horizontal" >
                         <Label Text="25.0 ℃" x:Name="txtTemperature" FontSize="60"/>
                         <Image Source="http://openweathermap.org/img/wn/02d@2x.png" x:Name="imageSource" Scale="1"/>
@@ -64,8 +57,8 @@
             </Frame>
             
             <Frame CornerRadius="10"
-               VerticalOptions="Start" Margin="10,10,10,10" Background="#6B728E" Padding="10,10,10,10">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+               VerticalOptions="Start" Margin="10,10,10,10" Background="#996B728E" Padding="10,10,10,10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="15,0">
                     <StackLayout WidthRequest="100">
                         <Label Text="Weather" Style="{StaticResource FixLabel}"/>
                         <Label Text="Condition" Style="{StaticResource FixLabel}"/>
@@ -85,11 +78,11 @@
             <StackLayout>
                 <Label Text="" FontSize="30"/>
                 <Image Scale="1.1" Opacity="0.9"
-                    Source="cloud.png"/>
+                    Source=""/>
             </StackLayout>
 
         </StackLayout>
-    </Frame>
+    </Grid>
     
     
 </ContentPage>

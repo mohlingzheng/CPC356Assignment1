@@ -5,7 +5,6 @@
              x:Class="Assignment1.Pages.Profile"
              IconImageSource="profile.png"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             BackgroundImageSource=""
     ios:Page.UseSafeArea="true">
 
     <!--#404258 #474E68 #50577A #6B728E-->
@@ -15,81 +14,135 @@
         <Style TargetType="Label" x:Key="Front">
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontAttributes" Value="None"/>
             <Setter Property="Margin" Value="0,0,0,0"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="Small">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontAttributes" Value="None"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="HeightRequest" Value="18"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="Tiny">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="FrameColor">
+            <Setter Property="BackgroundColor" Value="#996B728E"/>
+            <Setter Property="CornerRadius" Value="20"/>
         </Style>
     </Page.Resources>
 
-    <Frame>
-        <Frame.Background>
-            <RadialGradientBrush Center="0.5,0.4"
-                             Radius="0.7">
-                <GradientStop Color="#0b2d39"
-                          Offset="0.1"/>
-                <GradientStop Color="#0f3c4c"
-                          Offset="0.5"/>
-                <GradientStop Color="#134b5f"
-                          Offset="1.0"/>
-            </RadialGradientBrush>
-        </Frame.Background>
+    <Grid Padding="0">
+        <Image Opacity="0.8"
+               Aspect="AspectFill"
+            Source="https://wallpaper.dog/large/708696.png"/>
 
-        <StackLayout>
+        <StackLayout Padding="15">
             <StackLayout Orientation="Horizontal">
-                <Frame CornerRadius="100" BackgroundColor="#6B728E" WidthRequest="180" HeightRequest="180" 
+                <Frame CornerRadius="100" Style="{StaticResource FrameColor}" WidthRequest="180" HeightRequest="180" 
                        Padding="0,0,0,0" IsClippedToBounds="True">
                     <Image Source="profile_picture.png" HeightRequest="200"/>
                 </Frame>
+                
                 <StackLayout Orientation="Vertical" Margin="5,0,0,0" VerticalOptions="Center">
-                    <Label Text="Moh Ling Zheng" Style="{StaticResource Front}"/>
-                    <Label Text="Year 3 Semester 1" Style="{StaticResource Front}"/>
-                    <Label Text="Created 30 days" x:Name="daysCreated" Style="{StaticResource Front}"/>
-                    <Button HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Italic" HeightRequest="25"
-                        Text="@moh_l_z" BackgroundColor="Transparent" Padding="0,0,0,0" Margin="0,0,0,0" Clicked="LinkToInstagram"/>
-                    <Button HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Italic" HeightRequest="25"
-                        Text="facebook.com/mlz.9/" BackgroundColor="Transparent" Padding="0,0,0,0" Margin="0,0,0,0" Clicked="LinkToFacebook"/>
+                    <Label Text="Moh Ling Zheng" Style="{StaticResource Front}" FontSize="22.5" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="Computer Science" Style="{StaticResource Front}" Margin="0,0,0,-10" HorizontalOptions="Center"/>
+                    <Label Text="Year 3 Semester 1" Style="{StaticResource Front}" Margin="0,0,0,0" HorizontalOptions="Center"/>
+                    <Label Text="Created 30 days" x:Name="daysCreated" Style="{StaticResource Front}" Margin="0,0,0,-10" HorizontalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
             
             <StackLayout Margin="0,10,0,0">
-                <Frame BackgroundColor="#6B728E" CornerRadius="20">
+                <Frame Style="{StaticResource FrameColor}">
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
-                            <Image WidthRequest="45"
-                                Source="https://img.icons8.com/material/512/ringer-volume.png"/>
-                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
-                                <Label Text="Mobile" Style="{StaticResource Front}" FontAttributes="None" />
-                                <Label Text="013-8241657" Style="{StaticResource Front}"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="20" 
+                                Source="https://img.icons8.com/ios-glyphs/512/facebook-new.png"/>
+                            <StackLayout Orientation="Vertical" Margin="-17,-10,0,-10" VerticalOptions="Center">
+                                <Button Text="facebook.com/moh.lingzheng.9/" BackgroundColor="Transparent" FontSize="12" FontAttributes="Italic"
+                                        WidthRequest="220" HeightRequest="36" Clicked="LinkToFacebook"
+                                        TextTransform="Lowercase" TextColor="White"
+                                        Padding="0,0,0,0" Margin="0,0,0,0"/>
                             </StackLayout>
                         </StackLayout>
+                        
                         <StackLayout Orientation="Horizontal">
-                            <Image WidthRequest="45" 
+                            <Image WidthRequest="20" 
+                                Source="https://img.icons8.com/material-outlined/512/instagram-new.png"/>
+                            <StackLayout Orientation="Vertical" Margin="-16,-10,0,-10" VerticalOptions="Center">
+                                <Button Text="@moh_l_z" BackgroundColor="Transparent" FontSize="12" FontAttributes="Italic"
+                                        WidthRequest="88" HeightRequest="36" Clicked="LinkToInstagram"
+                                        TextTransform="Lowercase" TextColor="White"
+                                        Padding="0,0,0,0" Margin="0,0,0,0"/> 
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                            <Image WidthRequest="20" 
+                                Source="https://img.icons8.com/material/512/ringer-volume.png"/>
+                            <StackLayout Orientation="Vertical" Margin="0,0,0,0" VerticalOptions="Center">
+                                <Label Text="013-8241657" Style="{StaticResource Small}"/>
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Image WidthRequest="20" 
                                 Source="https://img.icons8.com/ios-filled/512/apple-mail.png"/>
-                            <StackLayout Orientation="Vertical" Margin="30,0,0,0">
-                                <Label Text="Email" Style="{StaticResource Front}" FontAttributes="None"/>
-                                <Label Text="mohlingzheng@gmail.com" Style="{StaticResource Front}"/>
+                            <StackLayout Orientation="Vertical" Margin="0,0,0,0" VerticalOptions="Center">
+                                <Label Text="mohlingzheng@gmail.com" Style="{StaticResource Small}"/>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
             </StackLayout>
             
-            <StackLayout Margin="0,10,0,0">
-                <Frame BackgroundColor="#6B728E" CornerRadius="20">
+            <StackLayout Margin="0,5,0,0">
+                <Frame Style="{StaticResource FrameColor}" Padding="10,10,10,15">
                     <StackLayout>
-                        <Label Text="List of Favourite Mobile Apps" Style="{StaticResource Front}"/>
-                        <Label Text="Instagram&#10;Grab&#10;WhatsApp&#10;TNG eWallet&#10;Facebook"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame CornerRadius="100" BackgroundColor="Transparent" IsClippedToBounds="True" WidthRequest="40" Padding="5">
+                                <Image WidthRequest="40"
+                                Source="https://img.icons8.com/external-anggara-outline-color-anggara-putra/512/external-app-ecommerce-interface-anggara-outline-color-anggara-putra.png"/>
+
+                            </Frame>
+                            <Label Text="List of Favourite Mobile Apps" FontSize="18" Margin="10,0,0,0"
+                                   Style="{StaticResource Tiny}" FontAttributes="Bold" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Margin="15,0,0,0">
+                            <Label Text="🛠️   Instagram" Style="{StaticResource Tiny}"/>
+                            <Label Text="🛠️   Grab" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🛠️   WhatsApp" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🛠️   TNG eWallet" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🛠️   Facebook" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                        </StackLayout>
                     </StackLayout>
                 </Frame>
             </StackLayout>
 
-            <StackLayout Margin="0,10,0,0">
-                <Frame BackgroundColor="#6B728E" CornerRadius="20">
+            <StackLayout Margin="0,5,0,0">
+                <Frame Style="{StaticResource FrameColor}" Padding="10,10,10,15">
                     <StackLayout>
-                        <Label Text="List of Favourite Games" Style="{StaticResource Front}"/>
-                        <Label Text="Among Us&#10;Pokemon Go&#10;Clash of Clans&#10;Save the Doge"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame CornerRadius="100" BackgroundColor="Transparent" IsClippedToBounds="True" WidthRequest="40" Padding="5"> 
+                                <Image WidthRequest="40"
+                                Source="https://img.icons8.com/ios/512/visual-game-boy.png"/>
+                            </Frame>
+                            <Label Text="List of Favourite Games" FontSize="18" Margin="10,0,0,0"
+                                   Style="{StaticResource Tiny}" FontAttributes="Bold" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Margin="15,0,0,0">
+                            <Label Text="🎮   Among Us" Style="{StaticResource Tiny}"/>
+                            <Label Text="🎮   Pokemon Go" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🎮   Clash of Clans" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🎮   Save the Doge" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                        </StackLayout>
                     </StackLayout>
                 </Frame>
             </StackLayout>
         </StackLayout>
-    </Frame>
+    </Grid>
 </ContentPage>

@@ -18,7 +18,7 @@ namespace Assignment1.Pages
             DateTime dt = DateTime.Now;
             DateTime dateCreated = new DateTime(2022, 11, 1);
             var daysC = dt - dateCreated;
-            daysCreated.Text = "Created " + (Convert.ToInt32(daysC.TotalDays)).ToString() + " days";
+            daysCreated.Text = "Created " + (Convert.ToInt32(daysC.TotalDays)).ToString() + " days ago";
         }
 
         private async void LinkToInstagram(object sender, EventArgs args)

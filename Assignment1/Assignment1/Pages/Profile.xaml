@@ -12,14 +12,14 @@
     
     <Page.Resources>
         <Style TargetType="Label" x:Key="Front">
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="TextColor" Value="#C8C8C8"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontAttributes" Value="None"/>
             <Setter Property="Margin" Value="0,0,0,0"/>
         </Style>
 
         <Style TargetType="Label" x:Key="Small">
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="TextColor" Value="#C8C8C8"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontAttributes" Value="None"/>
             <Setter Property="Margin" Value="0,0,0,0"/>
@@ -27,7 +27,7 @@
         </Style>
 
         <Style TargetType="Label" x:Key="Tiny">
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="TextColor" Value="#C8C8C8"/>
         </Style>
 
         <Style TargetType="Frame" x:Key="FrameColor">
@@ -49,7 +49,7 @@
                 </Frame>
                 
                 <StackLayout Orientation="Vertical" Margin="5,0,0,0" VerticalOptions="Center">
-                    <Label Text="Moh Ling Zheng" Style="{StaticResource Front}" FontSize="22.5" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="Moh Ling Zheng" Style="{StaticResource Front}" FontSize="22.5" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White"/>
                     <Label Text="Computer Science" Style="{StaticResource Front}" Margin="0,0,0,-10" HorizontalOptions="Center"/>
                     <Label Text="Year 3 Semester 1" Style="{StaticResource Front}" Margin="0,0,0,0" HorizontalOptions="Center"/>
                     <Label Text="Created 30 days" x:Name="daysCreated" Style="{StaticResource Front}" Margin="0,0,0,-10" HorizontalOptions="Center"/>
@@ -65,7 +65,7 @@
                             <StackLayout Orientation="Vertical" Margin="-17,-10,0,-10" VerticalOptions="Center">
                                 <Button Text="facebook.com/moh.lingzheng.9/" BackgroundColor="Transparent" FontSize="12" FontAttributes="Italic"
                                         WidthRequest="220" HeightRequest="36" Clicked="LinkToFacebook"
-                                        TextTransform="Lowercase" TextColor="White"
+                                        TextTransform="Lowercase" TextColor="#C8C8C8"
                                         Padding="0,0,0,0" Margin="0,0,0,0"/>
                             </StackLayout>
                         </StackLayout>
@@ -76,7 +76,7 @@
                             <StackLayout Orientation="Vertical" Margin="-16,-10,0,-10" VerticalOptions="Center">
                                 <Button Text="@moh_l_z" BackgroundColor="Transparent" FontSize="12" FontAttributes="Italic"
                                         WidthRequest="88" HeightRequest="36" Clicked="LinkToInstagram"
-                                        TextTransform="Lowercase" TextColor="White"
+                                        TextTransform="Lowercase" TextColor="#C8C8C8"
                                         Padding="0,0,0,0" Margin="0,0,0,0"/> 
                             </StackLayout>
                         </StackLayout>
@@ -109,8 +109,9 @@
                                 Source="https://img.icons8.com/external-anggara-outline-color-anggara-putra/512/external-app-ecommerce-interface-anggara-outline-color-anggara-putra.png"/>
 
                             </Frame>
-                            <Label Text="List of Favourite Mobile Apps" FontSize="18" Margin="10,0,0,0"
-                                   Style="{StaticResource Tiny}" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="Favourite Mobile Apps" FontSize="18" Margin="10,0,0,0"
+                                   Style="{StaticResource Tiny}" TextColor="White" 
+                                   FontAttributes="Bold" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Margin="15,0,0,0">
                             <Label Text="🛠️   Instagram" Style="{StaticResource Tiny}"/>
@@ -131,12 +132,12 @@
                                 <Image WidthRequest="40"
                                 Source="https://img.icons8.com/ios/512/visual-game-boy.png"/>
                             </Frame>
-                            <Label Text="List of Favourite Games" FontSize="18" Margin="10,0,0,0"
+                            <Label Text="Favourite Mobile Games" FontSize="18" Margin="10,0,0,0" TextColor="White"
                                    Style="{StaticResource Tiny}" FontAttributes="Bold" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Margin="15,0,0,0">
                             <Label Text="🎮   Among Us" Style="{StaticResource Tiny}"/>
-                            <Label Text="🎮   Pokemon Go" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
+                            <Label Text="🎮   Pokemon GO" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
                             <Label Text="🎮   Clash of Clans" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
                             <Label Text="🎮   Save the Doge" Margin="0,-9,0,0" Style="{StaticResource Tiny}"/>
                         </StackLayout>

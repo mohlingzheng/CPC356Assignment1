@@ -8,67 +8,67 @@
              x:Name="RecordPage"
              IconImageSource="record.png">
 
-    <Grid Padding="5" RowSpacing="1" ColumnSpacing="1">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="BasicButton">
+            <Setter Property="BackgroundColor" Value="#996B728E"/>
+        </Style>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Style TargetType="Label" x:Key="InfoLabel">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="TextColor" Value="#C8C8C8"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <Image Opacity="0.8"
+               Aspect="AspectFill"
+            Source="https://wallpaper.dog/large/708696.png"/>
+        
+        <StackLayout Margin="15">
+            <Label Text="Apps Record" FontSize="22.5" VerticalOptions="Center" HorizontalOptions="Center"
+                   TextColor="White" FontAttributes="Bold"/>
 
-        <Entry x:Name="newName"
-               Placeholder="Enter name"
-               Grid.Row="0"/>
-
-        <Entry x:Name="newType"
-               Placeholder="Enter type"
-               Grid.Row="1"/>
-
-        <Entry x:Name="newYear"
-               Placeholder="Enter year"
-               Grid.Row="2"/>
-
-        <Entry x:Name="newVersion"
-               Placeholder="Enter version"
-               Grid.Row="3"/>
-
-        <Button Text="Add Game"
-                Grid.Row="4"
-                Clicked="Button_Clicked"/>
-
-        <Label x:Name="statusMessage"
-               Grid.Row="5"/>
-
-        <Button Text="Delete"
-                Grid.Row="6"
-                Clicked="OnDeleteButtonClicked"/>
-
-        <Button Text="Get All People"
-                Grid.Row="7"
-                Clicked="OnGetButtonClicked"/>
-
-        <ListView x:Name="gameList"
-                  Grid.Row="8">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell Height="30">
-                        <StackLayout Padding="5">
-                            <Label Text="{Binding Id}"/>
-                            <Label Text="{Binding Name}"/>
-                            <Label Text="{Binding Type}"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Add New Apps" Style="{StaticResource BasicButton}" Grid.Column="0"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Update List" Style="{StaticResource BasicButton}" Grid.Column="1"
+                        Clicked="OnGetButtonClicked"/>
+            </Grid>
+            
+            <Frame BackgroundColor="#996B728E" Margin="0,10,0,0" CornerRadius="10" VerticalOptions="Fill">
+                <StackLayout>
+                    <ListView x:Name="gameList" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="5">
+                                        <Label Text="{Binding Name}" Style="{StaticResource InfoLabel}" FontSize="18"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Type}" Grid.Column="0" Style="{StaticResource InfoLabel}"/>
+                                            <Label Text="{Binding Year}" Grid.Column="1" Style="{StaticResource InfoLabel}"/>
+                                            <Label Text="{Binding Version}" Grid.Column="2" Style="{StaticResource InfoLabel}"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        
     </Grid>
 </ContentPage>

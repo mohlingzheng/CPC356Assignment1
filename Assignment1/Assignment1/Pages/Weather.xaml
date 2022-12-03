@@ -16,7 +16,7 @@
         </Style>
 
         <Style TargetType="Label" x:Key="GetLabel">
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="TextColor" Value="#C8C8C8"/>
             <Setter Property="Margin" Value="10, 0, 0, 0"/>
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontAttributes" Value="Bold"/>
@@ -30,7 +30,7 @@
             Source="https://wallpaper.dog/large/708696.png"/>
 
         <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="15">
-            <Label Text="Weather Forecast" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="Weather Forecast" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White"/>
             <Label Text="date" x:Name="lbldate" FontSize="15" HorizontalOptions="Center"/>
 
             <StackLayout HorizontalOptions="Start" Margin="10,10,0,0" WidthRequest="400">
@@ -47,8 +47,8 @@
                VerticalOptions="Start" Margin="10, 10, 10, 10" BackgroundColor="#996B728E" Padding="10,10,10,10">
                 <StackLayout VerticalOptions="Center" Margin="15,0">
                     <StackLayout Orientation="Horizontal" >
-                        <Label Text="25.0 ℃" x:Name="txtTemperature" FontSize="60"/>
-                        <Image Source="http://openweathermap.org/img/wn/02d@2x.png" x:Name="imageSource" Scale="1"/>
+                        <Label Text="25.0 ℃" x:Name="txtTemperature" FontSize="60" TextColor="White"/>
+                        <Image Source="http://openweathermap.org/img/wn/02d@2x.png" x:Name="imageSource" WidthRequest="80"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Baram" x:Name="txtLocation" FontSize="30"/>

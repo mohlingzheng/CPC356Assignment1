@@ -17,6 +17,15 @@
             <Setter Property="FontAttributes" Value="Bold"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="TextColor" Value="#C8C8C8"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="InfoFrame">
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="BackgroundColor" Value="Gray"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
         </Style>
     </Page.Resources>
     
@@ -38,28 +47,41 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Text="Add New Apps" Style="{StaticResource BasicButton}" Grid.Column="0"
-                        Clicked="Button_Clicked"/>
+                        Clicked="AddNewButtonClick"/>
                 <Button Text="Update List" Style="{StaticResource BasicButton}" Grid.Column="1"
                         Clicked="OnGetButtonClicked"/>
             </Grid>
             
             <Frame BackgroundColor="#996B728E" Margin="0,10,0,0" CornerRadius="10" VerticalOptions="Fill">
                 <StackLayout>
-                    <ListView x:Name="gameList" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+                    <ListView x:Name="gameList" VerticalOptions="FillAndExpand" HasUnevenRows="True"
+                              IsPullToRefreshEnabled="False">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="Delete" Clicked="OnDeleteButtonClicked" CommandParameter="{Binding Id}"/>
+                                    </ViewCell.ContextActions>
                                     <StackLayout Padding="5">
-                                        <Label Text="{Binding Name}" Style="{StaticResource InfoLabel}" FontSize="18"/>
+                                        <Label Text="{Binding Name}" Style="{StaticResource InfoLabel}" FontSize="18" TextColor="White"/>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="150"/>
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Text="{Binding Type}" Grid.Column="0" Style="{StaticResource InfoLabel}"/>
-                                            <Label Text="{Binding Year}" Grid.Column="1" Style="{StaticResource InfoLabel}"/>
-                                            <Label Text="{Binding Version}" Grid.Column="2" Style="{StaticResource InfoLabel}"/>
+
+                                            <Frame Grid.Column="0" Style="{StaticResource InfoFrame}">
+                                                <Label Text="{Binding Type}" Style="{StaticResource InfoLabel}"/>
+                                            </Frame>
+
+                                            <Frame Grid.Column="1" Style="{StaticResource InfoFrame}">
+                                                <Label Text="{Binding Year}" Style="{StaticResource InfoLabel}"/>
+                                            </Frame>
+
+                                            <Frame Grid.Column="2" Style="{StaticResource InfoFrame}">
+                                                <Label Text="{Binding Version}" Style="{StaticResource InfoLabel}"/>
+                                            </Frame>
                                         </Grid>
                                     </StackLayout>
                                 </ViewCell>

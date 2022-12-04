@@ -55,7 +55,7 @@
                     </StackLayout>
                 </StackLayout>
             </Frame>
-            
+
             <Frame CornerRadius="10"
                VerticalOptions="Start" Margin="10,10,10,10" Background="#996B728E" Padding="10,10,10,10">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="15,0">
@@ -74,12 +74,6 @@
                     </StackLayout>
                 </StackLayout>
             </Frame>
-
-            <StackLayout>
-                <Label Text="" FontSize="30"/>
-                <Image Scale="1.1" Opacity="0.9"
-                    Source=""/>
-            </StackLayout>
 
         </StackLayout>
     </Grid>

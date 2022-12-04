@@ -9,12 +9,12 @@ namespace Assignment1
     {
         string dbPath => FileAccessHelper.GetLocalFilePath("record.db3");
         
-        public static GameRepository GameRepo { get; private set; }
+        public static AppsRepository GameRepo { get; private set; }
         public App()
         {
             InitializeComponent();
 
-            GameRepo = new GameRepository(dbPath);
+            GameRepo = new AppsRepository(dbPath);
 
             MainPage = new MainPage();
         }

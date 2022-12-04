@@ -25,10 +25,10 @@
                 <StackLayout BackgroundColor="Transparent">
                     <Label Text="Adding New Apps Record"/>
                     <Entry Placeholder="Enter name" x:Name="newName"/>
-                    <Entry Placeholder="Enter type" x:Name="newType"/>
-                    <Entry Placeholder="Enter year" x:Name="newYear"/>
-                    <Entry Placeholder="Enter version" x:Name="newVersion"/>
-                    <Button Text="Add" Clicked="AlertConfirmation"/>
+                    <Entry Placeholder="Enter type" x:Name="newType" IsSpellCheckEnabled="True" IsTextPredictionEnabled="True"/>
+                    <Entry Placeholder="Enter year" x:Name="newYear" MaxLength="4"/>
+                    <Entry Placeholder="Enter version" x:Name="newVersion" MaxLength="10"/>
+                    <Button Text="Submit" Clicked="AlertConfirmation" HorizontalOptions="Center" WidthRequest="180" CornerRadius="20"/>
                     <Label Text="" x:Name="statusMessage"/>
                 </StackLayout>
             </Frame>

@@ -89,7 +89,7 @@ namespace Assignment1.Pages
 
         public void SubmitButton()
         {
-            App.GameRepo.AddNewGame(newName.Text, newType.Text, newYear.Text, newVersion.Text);
+            App.GameRepo.AddNewApps(newName.Text, newType.Text, newYear.Text, newVersion.Text);
             statusMessage.Text = "A new apps " + newName.Text + " is added.";
         }
         public async void AlertConfirmation(object sender, EventArgs e)

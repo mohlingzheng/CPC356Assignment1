@@ -18,15 +18,6 @@ namespace Assignment1.Pages
             InitializeComponent();
         }
 
-        public async void Button_Clicked(object sender, EventArgs args)
-        {
-            //statusMessage.Text = "";
-            //App.GameRepo.AddNewGame(newName.Text, newType.Text, newYear.Text, newVersion.Text);
-            //statusMessage.Text = App.GameRepo.StatusMessage;
-            //string result = await DisplayPromptAsync("Question 1", "What's your name?");
-            await PopupNavigation.Instance.PushAsync(new FormPage());
-        }
-
         public async void OnGetButtonClicked(object sender, EventArgs args)
         {
             //statusMessage.Text = "";
